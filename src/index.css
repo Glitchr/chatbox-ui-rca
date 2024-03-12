@@ -1,0 +1,126 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5F5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  line-height: 1.5;
+  color: #121212;
+}
+textarea,
+input,
+button {
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  line-height: 1.5;
+  margin: 0;
+}
+button {
+  color: #3992ff;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar {
+  width: 400px;
+  height: 100%;
+}
+
+.chatbox {
+  width: 77%;
+  height: 100%;
+}
+
+.shadow-border {
+  box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+}
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bot {
+  color: #333; /* Dark text color */
+  box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(107,107,107,0.33);
+}
+
+
+.other {
+  background-color: transparent;
+  border: none;
+  
+}
+
+.message {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.message-container {
+  height: 63.5vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.message-list {
+  display: flex;
+  align-items: center;
+}
+
+.card-header {
+  background-color: transparent;
+}
+
+.card-footer {
+  background-color: transparent;
+  display: flex;
+  justify-content: end;
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+}
