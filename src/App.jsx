@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Chat from './components/Chat';
+import Chat from './components/Chatbox/Chat';
 
 export default function App() {
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import axios from 'axios';
 
@@ -25,20 +25,21 @@ export default function ChatBox() {
   }, []);
 
   return (
-      <Card className="border-0 shadow-border">
-        <Card.Header className="mt-2">
-          <h4>Chats</h4>
-        </Card.Header>
-        <Card.Body>
-          <Row>
-              <Message messages={messages} />
-          </Row>
-          <Row className="w-100">
-            <Col>
-              <Input />
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    );
+    <Card id="mainCard" className="shadow-border background-gradient">
+      <Card.Header id="mainCardHeader" className="mt-2 d-none d-lg-block justify-content-between">
+        <h5>Business 84</h5>
+        
+      </Card.Header>
+      <Card.Body>
+        <Row className="message-container">
+          <Message messages={messages} />
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center">
+            <Input />
+          </Col>
+        </Row>
+      </Card.Body>
+    </Card>
+  );
 }
