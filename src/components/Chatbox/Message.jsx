@@ -4,14 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 
 export default function Message({ messages }) {
-  const lastMessageRef = useRef(null);
-
-  // Scroll to the most recent messages on load
-  useEffect(() => {
-    if (lastMessageRef.current) {
-      lastMessageRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [messages]);
+  const messagesEndRef = useRef(null);
 
   // Group messages by day
   const groupedMessages = messages.reduce((acc, message) => {
@@ -23,20 +16,23 @@ export default function Message({ messages }) {
     return acc;
   }, {});
 
+  // Scroll to the bottom of the message list after rendering
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [groupedMessages]);
+
   return (
     <div className="message-container top-bottom-overflow-fade">
-      <ListGroup className="message-list" ref={lastMessageRef}>
-        {Object.entries(groupedMessages).map(([date, messagesForDate]) => (
+      <ListGroup className="message-list">
+        {Object.entries(groupedMessages).map(([date, messagesForDate], dateIndex) => (
           <React.Fragment key={date}>
 
             <div className="date-separator mt-3">
               <span>{date}</span>
             </div>
 
-            {messagesForDate.map((message, index) => (
+            {messagesForDate.map((message) => (
               <ListGroup.Item
-                key={index}
-                ref={index === message.length - 1 ? lastMessageRef : null}
                 className={`message shadow-border ${message.sender_name === "bot" ? "bot" : "other"}`}
               >
                 <div className="mb-1 bot-name-text">
@@ -65,6 +61,7 @@ export default function Message({ messages }) {
             ))}
           </React.Fragment>
         ))}
+        <div ref={messagesEndRef} />
       </ListGroup>
     </div>
   );
